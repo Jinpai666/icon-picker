@@ -1,4 +1,4 @@
-import PickerColumn from "./components/pickerColumn";
+import PickerColumn from "./components/PickerColumn";
 
 
 
