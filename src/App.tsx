@@ -1,4 +1,3 @@
-import React from "react";
 import PickerColumn from "./components/pickerColumn";
 
 
