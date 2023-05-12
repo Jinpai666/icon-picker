@@ -1,19 +1,14 @@
-import { FC, useState, RefObject, createRef } from 'react';
+import React, { FC, useState } from 'react';
 import Modal from './PickerModal';
 import html2pdf from 'html2pdf.js';
-
 import { AccountCircle } from '@mui/icons-material';
 
-type PickerProps = {
-    title: string;
-    message: string;
-}
+import { Wrapper } from './styled/Wrapper.styled'
 
-
-const PickerColumn: FC<PickerProps> = ({ message, title }) => {
+const PickerColumn: FC = () => {
     const [showModal, setShowModal] = useState<boolean>(false);
-    const pickerColumnRef: RefObject<HTMLDivElement> = createRef();
-    const buttonRef: RefObject<HTMLButtonElement> = createRef();
+    const pickerColumnRef: React.RefObject<HTMLDivElement> = React.createRef();
+    const buttonRef: React.RefObject<HTMLButtonElement> = React.createRef();
 
     const handleIconClick = () => setShowModal(!showModal);
 
@@ -42,19 +37,22 @@ const PickerColumn: FC<PickerProps> = ({ message, title }) => {
     };
 
     return (
-        <div ref={pickerColumnRef}>
+        <Wrapper ref={pickerColumnRef}>
             <div onClick={handleIconClick}>
                 <AccountCircle />
             </div>
-            <div>{title}</div>
-            <div>{message}</div>
-            {showModal && <Modal />}
-            <div>
+            <form>
+                <input type="text"/>
+                <input type="text"/>
                 <button ref={buttonRef} onClick={save}>
                     Save as PDF
                 </button>
+            </form>
+            {showModal && <Modal />}
+            <div>
+
             </div>
-        </div>
+        </Wrapper>
     );
 };
 

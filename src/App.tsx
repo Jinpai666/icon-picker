@@ -1,24 +1,15 @@
 import PickerColumn from "./components/PickerColumn";
-
+import { Container } from "./components/styled/Container.styled"
 
 
 const App = () => {
 
     return (
-        <div>
-           <PickerColumn
-                title="title1"
-                message="message1"
-           />
-            <PickerColumn
-                title="title2"
-                message="message2"
-            />
-            <PickerColumn
-                title="title3"
-                message="message3"
-            />
-        </div>
+        <Container>
+           <PickerColumn/>
+            <PickerColumn/>
+            <PickerColumn/>
+        </Container>
     )
 }
 
