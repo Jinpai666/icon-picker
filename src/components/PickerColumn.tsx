@@ -1,4 +1,4 @@
-import { FC, useState, useRef, FormEvent } from 'react';
+import { FC, useState, FormEvent, useRef } from 'react';
 import Modal from './PickerModal';
 import html2pdf from 'html2pdf.js';
 import { AccountCircle } from '@mui/icons-material';
@@ -9,7 +9,7 @@ import { Form } from './styled/Form.styled';
 
 const PickerColumn: FC = () => {
     const [showModal, setShowModal] = useState<boolean>(false);
-    const pdfContentRef = useRef<HTMLDivElement>();
+    const pdfContentRef = useRef<HTMLInputElement>(null)
 
     const handleIconClick = () => setShowModal(!showModal);
 
