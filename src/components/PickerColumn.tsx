@@ -9,7 +9,7 @@ import { Form } from './styled/Form.styled';
 
 const PickerColumn: FC = () => {
     const [showModal, setShowModal] = useState<boolean>(false);
-    const pdfContentRef = useRef<HTMLDivElement | null>(null);
+    const pdfContentRef = useRef<HTMLDivElement>();
 
     const handleIconClick = () => setShowModal(!showModal);
 
