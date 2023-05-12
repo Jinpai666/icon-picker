@@ -1,6 +1,6 @@
 import React, { FC, useState, RefObject } from 'react';
 import Modal from './PickerModal';
-import html2pdf, { Options } from 'html2pdf.js';
+import html2pdf from 'html2pdf.js';
 
 import { AccountCircle } from '@mui/icons-material';
 
@@ -19,7 +19,7 @@ const PickerColumn: FC<PickerProps> = ({ message, title }) => {
     const save = () => {
         const element = pickerColumnRef.current;
         const button = buttonRef.current;
-        const options: Options = {
+        const options = {
             filename: 'slide.pdf',
             margin: 10,
             jsPDF: { format: 'a4', orientation: 'portrait' },
