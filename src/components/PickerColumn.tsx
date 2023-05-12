@@ -1,18 +1,19 @@
-import React, { FC, useState, RefObject } from 'react';
+import { FC, useState, RefObject, createRef } from 'react';
 import Modal from './PickerModal';
 import html2pdf from 'html2pdf.js';
 
 import { AccountCircle } from '@mui/icons-material';
 
-interface PickerProps {
+type PickerProps = {
     title: string;
     message: string;
 }
 
+
 const PickerColumn: FC<PickerProps> = ({ message, title }) => {
     const [showModal, setShowModal] = useState<boolean>(false);
-    const pickerColumnRef: RefObject<HTMLDivElement> = React.createRef();
-    const buttonRef: RefObject<HTMLButtonElement> = React.createRef();
+    const pickerColumnRef: RefObject<HTMLDivElement> = createRef();
+    const buttonRef: RefObject<HTMLButtonElement> = createRef();
 
     const handleIconClick = () => setShowModal(!showModal);
 
@@ -35,7 +36,7 @@ const PickerColumn: FC<PickerProps> = ({ message, title }) => {
             .save()
             .then(() => {
                 if (button) {
-                    button.style.display = 'block'; // Show after PDF generation
+                    button.style.display = 'block';
                 }
             });
     };
