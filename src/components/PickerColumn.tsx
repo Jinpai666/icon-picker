@@ -4,6 +4,7 @@ import html2pdf from 'html2pdf.js';
 import { AccountCircle } from '@mui/icons-material';
 
 import { Wrapper } from './styled/Wrapper.styled'
+import {Form} from "./styled/Form.styled";
 
 const PickerColumn: FC = () => {
     const [showModal, setShowModal] = useState<boolean>(false);
@@ -38,16 +39,16 @@ const PickerColumn: FC = () => {
 
     return (
         <Wrapper ref={pickerColumnRef}>
+            <Form>
             <div onClick={handleIconClick}>
                 <AccountCircle />
             </div>
-            <form>
                 <input type="text"/>
                 <input type="text"/>
                 <button ref={buttonRef} onClick={save}>
                     Save as PDF
                 </button>
-            </form>
+            </Form>
             {showModal && <Modal />}
             <div>
 
