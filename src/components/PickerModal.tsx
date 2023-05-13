@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { Modal } from "./styles/Modal.styled";
 
 type PickerModalProps = {
@@ -8,8 +8,9 @@ type PickerModalProps = {
 }
 
 const PickerModal: FC<PickerModalProps> = ({icons, handleModalVisibility, setIcon}) => {
-    const handleClick = (e) =>{
-        setIcon(e.target.innerHTML)
+    const handleClick = (e: React.MouseEvent<HTMLSpanElement>) =>{
+        console.log(e.target)
+        setIcon((e.target as Element).innerHTML)
         handleModalVisibility(false)
     }
     return (
