@@ -5,7 +5,6 @@ export const Modal = styled.div`
   font-family: 'Lato', sans-serif;
   position: absolute;
   width: 100%;
-  height: 100%;
   left: 0;
   top: 0;
   background:#dbd3dc;

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const PdfContent = styled.div`
+  overflow: visible;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,30 +10,31 @@ export const PdfContent = styled.div`
 
   input {
     font-family: 'Lato', sans-serif;
-    font-size: 16px;
     text-align: center;
     border: none;
     outline: none;
-    padding: 5px;
+    padding: 10px 0;
     font-weight: 700;
 
 
     &:first-child {
       background-color: transparent;
       text-align: center;
-      font-size: 22px;
+      font-size: 26px;
+      line-height: 26px;
       margin-bottom: 30px;
     }
 
     &:nth-child(2) {
       background: #f7f3f8;
+      font-size: 16px;
     }
 
     &:nth-child(3) {
-      font-size: 10px;
-      font-style: italic;
+  font-size: 14px;
+      line-height:5px;
       width: 100%;
-
+      font-style: italic;
     }
 
     &::placeholder {

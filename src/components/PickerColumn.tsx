@@ -29,6 +29,7 @@ const PickerColumn: FC<PickerColumnProps> = ({icons}) => {
                 setIcon={setIconToPrint}
                 icons={icons}
             />}
+
         </Column>
     );
 };
