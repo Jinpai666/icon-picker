@@ -3,9 +3,9 @@ import PickerModal from './PickerModal';
 import html2pdf from 'html2pdf.js';
 import { AccountCircle } from '@mui/icons-material';
 
-import { Wrapper } from './styled/Wrapper.styled';
-import { PdfContent } from './styled/PdfContent.styled';
-import { Form } from './styled/Form.styled';
+import { Wrapper } from './styles/Wrapper.styled';
+import { PdfContent } from './styles/PdfContent.styled';
+import { Form } from './styles/Form.styled';
 
 const PickerColumn: FC = () => {
     const [showModal, setShowModal] = useState<boolean>(false);

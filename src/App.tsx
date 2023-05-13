@@ -1,5 +1,5 @@
 import PickerColumn from "./components/PickerColumn";
-import { Container } from "./components/styled/Container.styled"
+import { Container } from "./components/styles/Container.styled"
 
 
 const App = () => {
