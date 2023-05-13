@@ -8,6 +8,6 @@ export const Icon = styled.div`
       justify-content: center;
       font-size:80px;
       cursor: pointer;
-      color:#839995;
+      color:#000;
     }
 `

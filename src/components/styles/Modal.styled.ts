@@ -8,7 +8,7 @@ export const Modal = styled.div`
   height: 100%;
   left: 0;
   top: 0;
-  background:#ccc;
+  background:#dbd3dc;
   z-index: 100;
   cursor: pointer;
   display: flex;
