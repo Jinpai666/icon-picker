@@ -15,7 +15,7 @@ const Picker: FC = () => {
         const element = pdfContentRef.current;
         const options = {
             filename: 'slide.pdf',
-            margin: 10,
+            margin: 1,
             jsPDF: {format: 'a4', orientation: 'portrait'},
         };
 

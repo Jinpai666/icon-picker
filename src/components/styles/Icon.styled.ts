@@ -6,9 +6,7 @@ export const Icon = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size:100px;
-      width: 100px;
-      height: 100px;
+      font-size:80px;
       cursor: pointer;
       color:#839995;
     }

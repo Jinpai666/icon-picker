@@ -17,7 +17,7 @@ export const PdfContent = styled.div`
     &:first-child {
       background-color:transparent;
       text-align: center;
-      font-size: 30px;
+      font-size: 22px;
       border: none;
       outline: none;
       font-weight: 700;
