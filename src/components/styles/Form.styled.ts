@@ -18,8 +18,8 @@ export const Form = styled.form`
     &:hover{
       color: #fff;
       border-color: #fff;
-      transition: 1s;
-      scale: 1.2;
+      transition: .6s;
+      scale: 1.1;
     }
   }
 `

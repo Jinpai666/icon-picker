@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const PdfContent = styled.div`
-  overflow: visible;
   display: flex;
   flex-direction: column;
   justify-content: center;
