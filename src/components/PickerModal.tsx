@@ -1,11 +1,12 @@
 import { FC } from 'react';
+import { Modal } from "./styles/Modal.styled";
 
 
-const PickerModal: FC = () => {
+const PickerModal: FC = ({onClick}) => {
     return (
-        <div>
+        <Modal onClick={onClick}>
             modal
-        </div>
+        </Modal>
     );
 }
 

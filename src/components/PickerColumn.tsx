@@ -6,12 +6,13 @@ import { AccountCircle } from '@mui/icons-material';
 import { Wrapper } from './styles/Wrapper.styled';
 import { PdfContent } from './styles/PdfContent.styled';
 import { Form } from './styles/Form.styled';
+import {Icon} from "./styles/Icon.styled";
 
 const PickerColumn: FC = () => {
     const [showModal, setShowModal] = useState<boolean>(false);
     const pdfContentRef = useRef<HTMLDivElement>(null)
 
-    const handleIconClick = () => setShowModal(!showModal);
+    const handleEditClick = () => setShowModal(!showModal);
 
     const save = (e: FormEvent) => {
         e.preventDefault();
@@ -32,18 +33,19 @@ const PickerColumn: FC = () => {
 
     return (
         <Wrapper>
+
             <Form  onSubmit={save}>
                 <PdfContent ref={pdfContentRef}>
-                    <div onClick={handleIconClick}>
+                    <Icon onClick={handleEditClick}>
                         <AccountCircle />
-                    </div>
+                    </Icon>
                     <input type="text" />
                     <input type="text" />
                 </PdfContent>
                 <button>Save as PDF</button>
             </Form>
+            {showModal && <PickerModal  onClick={handleEditClick}/>}
 
-            {showModal && <PickerModal />}
         </Wrapper>
     );
 };
