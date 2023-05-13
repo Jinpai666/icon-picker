@@ -1,16 +1,24 @@
 import { FC } from 'react';
 import { Modal } from "./styles/Modal.styled";
 
+type PickerModalProps = {
+    icons: string[];
+    handleModalVisibility: (visibility: boolean) => void;
+    setIcon: (icon: string) => void;
+}
 
-const PickerModal: FC = ({icons, handleClick, targetId}) => {
-
+const PickerModal: FC<PickerModalProps> = ({icons, handleModalVisibility, setIcon}) => {
+    const handleClick = (e) =>{
+        setIcon(e.target.innerHTML)
+        handleModalVisibility(false)
+    }
     return (
         <Modal>
             <h2>Choose an icon</h2>
             {icons.map((icon, idx)=>(
                 <span
                     key={idx}
-                    onClick={e=>handleClick(e, targetId)}
+                    onClick={e=>handleClick(e)}
                     className="material-symbols-outlined">
                     {icon}
                 </span>
