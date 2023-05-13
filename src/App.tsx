@@ -1,7 +1,6 @@
-import PickerColumn from "./components/PickerColumn";
 import { Container } from "./components/styles/Container.styled"
 import { GlobalStyles } from "./components/styles/Global";
-import PickerModal from "./components/PickerModal";
+import Picker from "./components/Picker";
 
 
 const App = () => {
@@ -9,9 +8,7 @@ const App = () => {
     return (
         <Container>
             <GlobalStyles/>
-            <PickerColumn/>
-            <PickerColumn/>
-            <PickerColumn/>
+            <Picker/>
         </Container>
     )
 }

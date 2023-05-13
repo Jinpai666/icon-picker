@@ -6,7 +6,18 @@ export const Modal = styled.div`
   height: 100%;
   left: 0;
   top: 0;
-  background:red;
+  background:#ccc;
   z-index: 100;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2{
+    font-size: 54px;
+    margin-bottom: 20px;
+  }
+  span{
+    font-size: 100px;
+    color: #839995;
+  }
 `
