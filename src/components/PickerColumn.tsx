@@ -1,5 +1,5 @@
 import { FC, useState, FormEvent, useRef } from 'react';
-import Modal from './PickerModal';
+import PickerModal from './PickerModal';
 import html2pdf from 'html2pdf.js';
 import { AccountCircle } from '@mui/icons-material';
 
@@ -43,7 +43,7 @@ const PickerColumn: FC = () => {
                 <button>Save as PDF</button>
             </Form>
 
-            {showModal && <Modal />}
+            {showModal && <PickerModal />}
         </Wrapper>
     );
 };

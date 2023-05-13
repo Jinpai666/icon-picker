@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 
-const Modal: FC = () => {
+const PickerModal: FC = () => {
     return (
         <div>
             modal
@@ -9,4 +9,4 @@ const Modal: FC = () => {
     );
 }
 
-export default Modal;
+export default PickerModal;
