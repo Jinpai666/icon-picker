@@ -16,7 +16,11 @@ const Picker: FC = () => {
         const options = {
             filename: 'slide.pdf',
             margin: 2,
-            jsPDF: {format: 'a4', orientation: 'portrait'},
+            jsPDF: {
+                orientation: 'p',
+                putOnlyUsedFonts:true,
+                precision: 3
+            }
         };
 
 

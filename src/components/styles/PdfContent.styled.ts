@@ -20,8 +20,7 @@ export const PdfContent = styled.div`
     &:first-child {
       background-color: transparent;
       text-align: center;
-      font-size: 26px;
-      line-height: 26px;
+      font-size: 22px;
       margin-bottom: 30px;
     }
 
