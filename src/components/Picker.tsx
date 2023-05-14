@@ -48,7 +48,7 @@ const Picker: FC = () => {
             drop: (item: DragItem) => {
                 const draggedIndex = item.index;
                 const droppedIndex = index;
-
+                if (draggedIndex === droppedIndex) return
                 const newColumnOrder = [...columnOrder];
                 newColumnOrder.splice(droppedIndex, 0, newColumnOrder.splice(draggedIndex, 1)[0]);
 
@@ -72,7 +72,7 @@ const Picker: FC = () => {
         <Wrapper>
             <Form onSubmit={save}>
                 <PdfContent ref={pdfContentRef}>
-                    <input name="title" placeholder="Insert a title here" />
+                    <input maxLength={20} name="title" placeholder="Insert a title here" />
                     <Row>
                         <DndProvider backend={HTML5Backend}>
                             {columnOrder.map((icons, idx) => (

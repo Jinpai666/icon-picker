@@ -20,8 +20,14 @@ const PickerColumn: FC<PickerColumnProps> = ({ icons, active }) => {
             <Icon onClick={handleModalClick}>
                 <span className="material-symbols-outlined">{iconToPrint}</span>
             </Icon>
-            <input placeholder="Insert text here" type="text" />
-            <input placeholder="Add here your additional text" type="text" />
+            <input
+                maxLength={20}
+                placeholder="Insert text here"
+                type="text" />
+            <input
+                maxLength={20}
+                placeholder="Add here your additional text"
+                type="text" />
             {showModal && (
                 <PickerModal handleModalVisibility={setShowModal} setIcon={setIconToPrint} icons={icons} />
             )}
