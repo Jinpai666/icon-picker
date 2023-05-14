@@ -14,4 +14,4 @@ https://icon-picker.netlify.app/
  2. html2pdf.js
  3. react drag and drop
  4. styled components
- 5. TypeScript
+ 5. TypeScript 
