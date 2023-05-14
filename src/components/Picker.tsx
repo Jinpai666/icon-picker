@@ -1,4 +1,4 @@
-import { FC, FormEvent, useRef, useState } from 'react';
+import React, { FC, FormEvent, useRef, useState } from 'react';
 import html2pdf from 'html2pdf.js';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
@@ -10,12 +10,7 @@ import { Row } from './styles/Row';
 import PickerColumn from './PickerColumn';
 import { PdfContent } from './styles/PdfContent.styled';
 
-interface PickerColumnWithDragProps {
-    icons: string[];
-    index: number;
-}
-
-interface DragItem  {
+type DragItem = {
     index: number;
 }
 
@@ -39,7 +34,7 @@ const Picker: FC = () => {
         html2pdf().set(options).from(element).save();
     };
 
-    const PickerColumnWithDrag: FC<PickerColumnWithDragProps> = ({ icons, index }) => {
+    const PickerColumnWithDrag: FC<{ icons: string[]; index: number }> = ({ icons, index }) => {
         const [{ isDragging }, drag] = useDrag(() => ({
             type: 'PICKER_COLUMN',
             item: { index } as DragItem,
@@ -73,7 +68,6 @@ const Picker: FC = () => {
             </div>
         );
     };
-
     return (
         <Wrapper>
             <Form onSubmit={save}>
