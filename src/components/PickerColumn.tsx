@@ -1,10 +1,10 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { Column } from './styles/Column.styled';
 import { Icon } from './styles/Icon.styled';
 import PickerModal from './PickerModal';
 
 type PickerColumnProps = {
-    isActive?: boolean;
+    active: boolean;
     icons: string[];
 };
 
