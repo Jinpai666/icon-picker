@@ -1,4 +1,4 @@
-import React, { FC, FormEvent, useRef, useState } from 'react';
+import  { FC, FormEvent, useRef, useState } from 'react';
 import html2pdf from 'html2pdf.js';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';

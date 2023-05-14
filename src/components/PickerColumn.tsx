@@ -4,7 +4,7 @@ import {Icon} from "./styles/Icon.styled";
 import PickerModal from "./PickerModal";
 
 type  PickerColumnProps = {
-    isActive: boolean;
+    isActive?: boolean;
     icons: string[];
 }
 
@@ -16,7 +16,7 @@ const PickerColumn: FC<PickerColumnProps> = ({icons, isActive}) => {
     const [iconToPrint, setIconToPrint] = useState<string>(icons[0]);
 
     return (
-        <Column isActive={isActive}>
+        <Column active={isActive}>
             <Icon  onClick={handleModalClick}>
             <span  className="material-symbols-outlined">
                     {iconToPrint}

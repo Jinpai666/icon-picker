@@ -7,7 +7,7 @@ export const Column = styled.div`
   gap: 10px;
   margin-bottom: 10px;
   ${(props) =>
-          props.isActive &&
+          props.active &&
           css`
       opacity: 0.3; 
     `}
