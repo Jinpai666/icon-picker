@@ -1,13 +1,23 @@
 import { FC, FormEvent, useRef, useState } from 'react';
 import html2pdf from 'html2pdf.js';
-import { icons } from "../assets/icons";
+import { DndProvider, useDrag, useDrop } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
+
+import { icons } from '../assets/icons';
 import { Wrapper } from './styles/Wrapper.styled';
 import { Form } from './styles/Form.styled';
 import { Row } from './styles/Row';
-import PickerColumn from "./PickerColumn";
-import { PdfContent } from "./styles/PdfContent.styled";
-import { DndProvider, useDrag, useDrop } from 'react-dnd';
-import { HTML5Backend } from 'react-dnd-html5-backend';
+import PickerColumn from './PickerColumn';
+import { PdfContent } from './styles/PdfContent.styled';
+
+interface PickerColumnWithDragProps {
+    icons: string[];
+    index: number;
+}
+
+interface DragItem  {
+    index: number;
+}
 
 const Picker: FC = () => {
     const pdfContentRef = useRef<HTMLDivElement | null>(null);
@@ -22,28 +32,25 @@ const Picker: FC = () => {
             jsPDF: {
                 orientation: 'p',
                 putOnlyUsedFonts: true,
-                precision: 3
-            }
+                precision: 3,
+            },
         };
 
-        html2pdf()
-            .set(options)
-            .from(element)
-            .save();
+        html2pdf().set(options).from(element).save();
     };
 
-    const PickerColumnWithDrag = ({ icons, index }: { icons: string[]; index: number }) => {
+    const PickerColumnWithDrag: FC<PickerColumnWithDragProps> = ({ icons, index }) => {
         const [{ isDragging }, drag] = useDrag(() => ({
             type: 'PICKER_COLUMN',
-            item: { index },
+            item: { index } as DragItem,
             collect: (monitor) => ({
-                isDragging: monitor.isDragging()
-            })
+                isDragging: monitor.isDragging(),
+            }),
         }));
 
         const [{ canDrop, isOver }, drop] = useDrop(() => ({
             accept: 'PICKER_COLUMN',
-            drop: (item) => {
+            drop: (item: DragItem) => {
                 const draggedIndex = item.index;
                 const droppedIndex = index;
 
@@ -54,14 +61,14 @@ const Picker: FC = () => {
             },
             collect: (monitor) => ({
                 canDrop: monitor.canDrop(),
-                isOver: monitor.isOver()
-            })
+                isOver: monitor.isOver(),
+            }),
         }));
 
         const isActive = canDrop && isOver;
 
         return (
-            <div ref={node => drag(drop(node))} style={{ opacity: isDragging ? 0.5 : 1 }}>
+            <div ref={(node) => drag(drop(node))} style={{ opacity: isDragging ? 0.5 : 1 }}>
                 <PickerColumn isActive={isActive} icons={icons} />
             </div>
         );
