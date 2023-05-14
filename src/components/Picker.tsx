@@ -60,11 +60,11 @@ const Picker: FC = () => {
             }),
         }));
 
-        const isActive = canDrop && isOver;
+        const isActive = canDrop && isOver || false;
 
         return (
             <div ref={(node) => drag(drop(node))} style={{ opacity: isDragging ? 0.5 : 1 }}>
-                <PickerColumn isActive={isActive} icons={icons} />
+                <PickerColumn active={isActive} icons={icons} />
             </div>
         );
     };
