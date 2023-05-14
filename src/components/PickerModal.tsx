@@ -9,7 +9,6 @@ type PickerModalProps = {
 
 const PickerModal: FC<PickerModalProps> = ({icons, handleModalVisibility, setIcon}) => {
     const handleClick = (e: React.MouseEvent<HTMLSpanElement>) =>{
-        console.log(e.target)
         setIcon((e.target as Element).innerHTML)
         handleModalVisibility(false)
     }
