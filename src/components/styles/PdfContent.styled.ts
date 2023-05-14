@@ -42,13 +42,13 @@ export const PdfContent = styled.div`
     }
 
     &:-ms-input-placeholder {
-      color: #000;
+      color: #839995;
       font-weight: 700;
       opacity: 1;
     }
 
     &::-ms-input-placeholder {
-      color: #000;
+      color: #839995;
       font-weight: 700;
       opacity: 1;
     }

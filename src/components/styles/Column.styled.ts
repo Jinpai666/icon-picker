@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 export const Column = styled.div`
   display: flex;
@@ -6,4 +6,9 @@ export const Column = styled.div`
   align-items: center;
   gap: 10px;
   margin-bottom: 10px;
+  ${(props) =>
+          props.isActive &&
+          css`
+      opacity: 0.3; 
+    `}
 `
