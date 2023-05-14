@@ -4,7 +4,7 @@ import {Icon} from "./styles/Icon.styled";
 import PickerModal from "./PickerModal";
 
 type  PickerColumnProps = {
-    isActive?: boolean;
+    active: boolean;
     icons: string[];
 }
 
